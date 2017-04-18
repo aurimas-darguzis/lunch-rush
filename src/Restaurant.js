@@ -4,7 +4,8 @@ import './Restaurant.css'
 
 class Restaurant extends Component {
   render () {
-    const { name, handleSelect, handleDeselect, votes } = this.props
+    const { name, handleSelect, handleDeselect, votes, user } = this.props
+    const userHasSelected = votes && Object.keys(votes).includes(user.uid)
 
     return (
       <article className='Restaurant'>
@@ -12,12 +13,19 @@ class Restaurant extends Component {
         <ul>
           { votes && map(votes, (votes, key) => <li key={key}>{ votes }</li>)}
         </ul>
-        <button onClick={handleSelect}>
-          Yea, I'd go there
-        </button>
-        <button className='destructive' onClick={handleDeselect}>
-          Nah, nevermind
-        </button>
+        {
+          userHasSelected 
+          ?
+            <button className='destructive' onClick={handleDeselect}>
+              Nah, nevermind
+            </button> 
+          :
+            <button onClick={handleSelect}>
+              Yea, I'd go there
+            </button>
+        }
+        
+       
       </article>
     )
   }

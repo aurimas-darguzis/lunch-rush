@@ -28,12 +28,13 @@ class Restaurants extends Component {
   }
 
   render () {
-    const { restaurants } = this.props
+    const { restaurants, user } = this.props
     return (
       <section className='Restaurants'>
         { map(restaurants, (restaurant, key) => {
           return <Restaurant  key={key}
                               {...restaurant}
+                              user={user}
                               handleSelect={ () => this.handleSelect(key) }
                               handleDeselect={ () => this.handleDeselect(key) }
                 />
