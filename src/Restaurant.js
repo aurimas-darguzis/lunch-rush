@@ -1,13 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import map from 'lodash/map';
-import './Restaurant.css';
+import React, { Component, PropTypes } from 'react'
+import map from 'lodash/map'
+import './Restaurant.css'
 
 class Restaurant extends Component {
   render () {
     return (
-      <article className="Restaurant">
-      </article>
-    );
+      <article className='Restaurant' />
+    )
   }
 }
 
@@ -17,6 +16,6 @@ Restaurant.propTypes = {
   user: PropTypes.object,
   handleSelect: PropTypes.func,
   handleDeselect: PropTypes.func
-};
+}
 
-export default Restaurant;
+export default Restaurant

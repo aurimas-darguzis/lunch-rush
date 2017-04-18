@@ -1,13 +1,12 @@
-import React, { PropTypes } from 'react';
-import { auth } from './firebase';
-import './CurrentUser.css';
+import React, { PropTypes } from 'react'
+import { auth } from './firebase'
+import './CurrentUser.css'
 
 const CurrentUser = ({ user }) => {
   return (
-    <div className="CurrentUser">
-    </div>
-  );
-};
+    <div className='CurrentUser' />
+  )
+}
 
 CurrentUser.propTypes = {
   user: PropTypes.shape({
@@ -16,6 +15,6 @@ CurrentUser.propTypes = {
     photoURL: PropTypes.string,
     uid: PropTypes.string.isRequired
   })
-};
+}
 
-export default CurrentUser;
+export default CurrentUser
