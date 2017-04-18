@@ -4,11 +4,20 @@ import './Restaurant.css'
 
 class Restaurant extends Component {
   render () {
-    const { name } = this.props
+    const { name, handleSelect, handleDeselect, votes } = this.props
 
     return (
       <article className='Restaurant'>
         <h3>{ name }</h3>
+        <ul>
+          { votes && map(votes, (votes, key) => <li key={key}>{ votes }</li>)}
+        </ul>
+        <button onClick={handleSelect}>
+          Yea, I'd go there
+        </button>
+        <button className='destructive' onClick={handleDeselect}>
+          Nah, nevermind
+        </button>
       </article>
     )
   }
